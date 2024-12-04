@@ -143,7 +143,41 @@ namespace HEWalks.API.Controllers
 
             return Ok(regionDto);
         }
-    }
+
+        //Delete Region
+        // DELETE: https: //localhost:portnumber/api/regions {id}
+
+        [HttpDelete]
+        [Route("{id:Guid}")]
+
+        public IActionResult Delete([FromRoute] Guid id)
+        {
+            var regionDomainModel = dbContext.Regions.FirstOrDefault(x => x.Id == id);
+
+            if (regionDomainModel == null)
+            {
+                return NotFound();
+            }
+
+            // Delete region
+            dbContext.Regions.Remove(regionDomainModel);
+            dbContext.SaveChanges();
+
+            //return deleted Region back
+            //map Domain Model to DTO
+            var regionDto = new RegionDto
+            {
+                Id = regionDomainModel.Id,
+                Code = regionDomainModel.Code,
+                Name = regionDomainModel.Name,
+                RegionImageUrl = regionDomainModel.RegionImageUrl
+            };
+
+            return Ok(regionDto);
+
+        }
+
+	}
 }
 
 
