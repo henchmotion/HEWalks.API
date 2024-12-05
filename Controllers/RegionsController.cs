@@ -21,11 +21,11 @@ namespace HEWalks.API.Controllers
         // GET ALL REGIONS
         // GET: https: //localhost:portnumber/api/regions
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
             //Get Data from Database - Domain models 
 
-            var regionsDomain = dbContext.Regions.ToList();
+            var regionsDomain = await dbContext.Regions.ToListAsync();
 
             //Map Domain Models to DTOs
             var regionsDto = new List<RegionDto>();
@@ -53,12 +53,12 @@ namespace HEWalks.API.Controllers
         [HttpGet]
         [Route("{id:Guid}")]
 
-        public IActionResult GetById([FromRoute] Guid id)
+        public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             //var region = dbContext.Regions.Find(id);
 
             //Get Region Domain Model From Database
-            var regionDomain = dbContext.Regions.FirstOrDefault(x => x.Id == id);
+            var regionDomain = await dbContext.Regions.FirstOrDefaultAsync(x => x.Id == id);
             if (regionDomain == null)
             {
                 return NotFound();
@@ -84,7 +84,7 @@ namespace HEWalks.API.Controllers
         //POST To Create New Region
         //POST:https: //localhost:portnumber/api/regions
         [HttpPost]
-        public IActionResult Create([FromBody] AddRegionRequestDto addRegionRequestDto)
+        public async Task<IActionResult> Create([FromBody] AddRegionRequestDto addRegionRequestDto)
         {
             // Map or Covert DTO to Domain Model
             var regionDomainModel = new Region
@@ -95,8 +95,8 @@ namespace HEWalks.API.Controllers
             };
 
             // Use Domaiin Model to create Region using DbContext
-            dbContext.Regions.Add(regionDomainModel);
-            dbContext.SaveChanges();
+            await dbContext.Regions.AddAsync(regionDomainModel);
+            await dbContext.SaveChangesAsync();
 
             // Map Domain moodel back to DTO
             var regionDto = new RegionDto
@@ -115,10 +115,10 @@ namespace HEWalks.API.Controllers
         //PUT: https: //localhost:portnumber/api/regions {id}
         [HttpPut]
         [Route("{id:Guid}")]
-        public IActionResult Update([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequestDto)
+        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequestDto)
         { 
             // Check if Region Exists 
-           var regionDomainModel = dbContext.Regions.FirstOrDefault(x => x.Id == id);
+           var regionDomainModel = await dbContext.Regions.FirstOrDefaultAsync(x => x.Id == id);
 
             if (regionDomainModel == null)
             {
@@ -130,7 +130,7 @@ namespace HEWalks.API.Controllers
             regionDomainModel.Name = updateRegionRequestDto.Name;   
             regionDomainModel.RegionImageUrl = updateRegionRequestDto.RegionImageUrl;
 
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
 
             // Convert Domain Model to DTO
             var regionDto = new RegionDto
@@ -150,7 +150,7 @@ namespace HEWalks.API.Controllers
         [HttpDelete]
         [Route("{id:Guid}")]
 
-        public IActionResult Delete([FromRoute] Guid id)
+        public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)
         {
             var regionDomainModel = dbContext.Regions.FirstOrDefault(x => x.Id == id);
 
@@ -161,7 +161,7 @@ namespace HEWalks.API.Controllers
 
             // Delete region
             dbContext.Regions.Remove(regionDomainModel);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
 
             //return deleted Region back
             //map Domain Model to DTO

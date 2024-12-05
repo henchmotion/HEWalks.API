@@ -64,7 +64,7 @@
   },
   {
     "ContainingType": "HEWalks.API.Controllers.RegionsController",
-    "Method": "Delete",
+    "Method": "DeleteAsync",
     "RelativePath": "api/Regions/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
