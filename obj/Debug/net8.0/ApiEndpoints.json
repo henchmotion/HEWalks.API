@@ -43,7 +43,7 @@
   },
   {
     "ContainingType": "HEWalks.API.Controllers.RegionsController",
-    "Method": "Update",
+    "Method": "UpdateAsync",
     "RelativePath": "api/Regions/{id}",
     "HttpMethod": "PUT",
     "IsController": true,

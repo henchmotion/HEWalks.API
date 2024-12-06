@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using HEWalks.API.Data;
 using Microsoft.Extensions.Options;
+using HEWalks.API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +12,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//injecting the DbContext
 builder.Services.AddDbContext<HEWalksDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("HEWalksConnectionString")));
 
+//Injecting the repository
+builder.Services.AddScoped<IRegionRepository, SQLRegionRepository>();
 
 
 var app = builder.Build();
