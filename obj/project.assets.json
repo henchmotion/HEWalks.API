@@ -2,6 +2,63 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Collection/7.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[10.0.0, 11.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Collection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Collection.dll": {}
+        }
+      },
+      "AutoMapper.Collection.LinqToSQL/7.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper.Collection": "7.0.1",
+          "AutoMapper.Extensions.ExpressionMapping": "1.0.0"
+        },
+        "compile": {
+          "lib/net461/AutoMapper.Collection.LinqToSQL.dll": {}
+        },
+        "runtime": {
+          "lib/net461/AutoMapper.Collection.LinqToSQL.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.ExpressionMapping/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "7.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.ExpressionMapping.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.ExpressionMapping.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -1699,6 +1756,65 @@
     }
   },
   "libraries": {
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Collection/7.0.1": {
+      "sha512": "pcdIsq7qj/bpcttVLIvbiDN3HHRGcPyW3BdzVuLS120tq/VNZxWg7PxMuTNTviC8iK8bptwuNHTKhCfYSP4dpQ==",
+      "type": "package",
+      "path": "automapper.collection/7.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.collection.7.0.1.nupkg.sha512",
+        "automapper.collection.nuspec",
+        "icon.png",
+        "lib/net461/AutoMapper.Collection.dll",
+        "lib/netstandard2.0/AutoMapper.Collection.dll"
+      ]
+    },
+    "AutoMapper.Collection.LinqToSQL/7.0.1": {
+      "sha512": "b2fUSqu+UypFvYtv1DLEBJGruih8zq4oDo0khnWH8/07LYeA0yE7NHH8c6waGF+bxYchmTXKCcv4N3wg0qasBQ==",
+      "type": "package",
+      "path": "automapper.collection.linqtosql/7.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.collection.linqtosql.7.0.1.nupkg.sha512",
+        "automapper.collection.linqtosql.nuspec",
+        "icon.png",
+        "lib/net461/AutoMapper.Collection.LinqToSQL.dll"
+      ]
+    },
+    "AutoMapper.Extensions.ExpressionMapping/1.0.0": {
+      "sha512": "Aq9jShjHUNT6xjQZ6jMIWLe0/FTOiANrxuhlqHmlwvClKRuuQ1x9zYRJ6edSNFwX8V2tTvrAvkE6lgn87O1wyQ==",
+      "type": "package",
+      "path": "automapper.extensions.expressionmapping/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.expressionmapping.1.0.0.nupkg.sha512",
+        "automapper.extensions.expressionmapping.nuspec",
+        "lib/net45/AutoMapper.Extensions.ExpressionMapping.dll",
+        "lib/net45/AutoMapper.Extensions.ExpressionMapping.xml",
+        "lib/netstandard1.3/AutoMapper.Extensions.ExpressionMapping.dll",
+        "lib/netstandard1.3/AutoMapper.Extensions.ExpressionMapping.xml",
+        "lib/netstandard2.0/AutoMapper.Extensions.ExpressionMapping.dll",
+        "lib/netstandard2.0/AutoMapper.Extensions.ExpressionMapping.xml"
+      ]
+    },
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -5144,6 +5260,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AutoMapper >= 13.0.1",
+      "AutoMapper.Collection.LinqToSQL >= 7.0.1",
       "Microsoft.EntityFrameworkCore >= 9.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.0",
@@ -5195,6 +5313,14 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
+          "AutoMapper.Collection.LinqToSQL": {
+            "target": "Package",
+            "version": "[7.0.1, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.0, )"
@@ -5236,5 +5362,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Collection 7.0.1 requires AutoMapper (>= 10.0.0 && < 11.0.0) but version AutoMapper 13.0.1 was resolved.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AutoMapper.Collection.LinqToSQL 7.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "AutoMapper.Collection.LinqToSQL",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

@@ -5,6 +5,7 @@ using HEWalks.API.Data;
 using Microsoft.EntityFrameworkCore;
 using HEWalks.API.Models.DTO;
 using HEWalks.API.Repositories;
+using AutoMapper;
 
 namespace HEWalks.API.Controllers
 {
@@ -15,13 +16,15 @@ namespace HEWalks.API.Controllers
     {
         private readonly HEWalksDbContext dbContext;
         private readonly IRegionRepository regionRepository;
-        public RegionsController(HEWalksDbContext dbContext, IRegionRepository regionRepository)
+		private readonly IMapper mapper;
+
+		public RegionsController(HEWalksDbContext dbContext, IRegionRepository regionRepository,
+            IMapper mapper)
         {
             this.dbContext = dbContext;
             this.regionRepository = regionRepository;
-           
-            
-        }
+			this.mapper = mapper;
+		}
 
         // GET ALL REGIONS
         // GET: https: //localhost:portnumber/api/regions
@@ -32,24 +35,10 @@ namespace HEWalks.API.Controllers
 
             var regionsDomain = await regionRepository.GetAllAsync();
 
-            //Map Domain Models to DTOs
-            var regionsDto = new List<RegionDto>();
-            foreach (var regionDomain in regionsDomain)
-            {
-                regionsDto.Add(new RegionDto()
-                {
-                    Id = regionDomain.Id,
-                    Code = regionDomain.Code,
-                    Name = regionDomain.Name,
-                    RegionImageUrl = regionDomain.RegionImageUrl,
-
-                });
-            }
-
-
-
+        
+            // Map Domain Models to DTOs &
             //Return the DTOs to the client
-            return Ok(regionsDto);
+            return Ok(mapper.Map<List<RegionDto>>(regionsDomain));
         }
 
 
@@ -64,24 +53,14 @@ namespace HEWalks.API.Controllers
 
             //Get Region Domain Model From Database
             var regionDomain = await regionRepository.GetByIdAsync(id);
+           
             if (regionDomain == null)
             {
                 return NotFound();
             }
-
-            //Map/Convert Region Domain Model to Region DTO
-            //
-
-            var regionDto = new RegionDto
-            {
-                Id = regionDomain.Id,
-                Code = regionDomain.Code,
-                Name = regionDomain.Name,
-                RegionImageUrl = regionDomain.RegionImageUrl,
-            };
-
+    
             //Return DTO back to client
-            return Ok(regionDto);
+            return Ok(mapper.Map<RegionDto>(regionDomain));
 
 
         }
@@ -92,26 +71,15 @@ namespace HEWalks.API.Controllers
         public async Task<IActionResult> Create([FromBody] AddRegionRequestDto addRegionRequestDto)
         {
             // Map or Covert DTO to Domain Model
-            var regionDomainModel = new Region
-            {
-                Code = addRegionRequestDto.Code,
-                Name = addRegionRequestDto.Name,
-                RegionImageUrl = addRegionRequestDto.RegionImageUrl,
-            };
+            var regionDomainModel = mapper.Map<Region>(addRegionRequestDto);
 
-            // Use Domaiin Model to create Region
-            regionDomainModel = await regionRepository.CreateAsync(regionDomainModel);
+			// Use Domaiin Model to create Region
+			regionDomainModel = await regionRepository.CreateAsync(regionDomainModel);
             //await dbContext.Regions.AddAsync(regionDomainModel);
             //await dbContext.SaveChangesAsync();
 
             // Map Domain moodel back to DTO
-            var regionDto = new RegionDto
-            {
-                Id = regionDomainModel.Id,
-                Code = regionDomainModel.Code,
-                Name = regionDomainModel.Name,
-                RegionImageUrl = regionDomainModel.RegionImageUrl
-            };
+            var regionDto = mapper.Map<RegionDto>(regionDomainModel);
 
             return CreatedAtAction(nameof(GetById), new { id = regionDomainModel.Id }, regionDomainModel);
         }
@@ -124,12 +92,7 @@ namespace HEWalks.API.Controllers
         public async Task<IActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequestDto)
         {
             // Map DTO to Domain Model
-            var regionDomainModel = new Region
-            {
-                Code = updateRegionRequestDto.Code,
-                Name = updateRegionRequestDto.Name,
-                RegionImageUrl = updateRegionRequestDto.RegionImageUrl,
-            };
+            var regionDomainModel = mapper.Map<Region>(updateRegionRequestDto);
 
 
             // Check if Region Exists 
@@ -141,16 +104,7 @@ namespace HEWalks.API.Controllers
             }
 
 
-            // Convert Domain Model to DTO
-            var regionDto = new RegionDto
-            {
-                Id = regionDomainModel.Id,
-                Code = regionDomainModel.Code,
-                Name = regionDomainModel.Name,
-                RegionImageUrl = regionDomainModel.RegionImageUrl
-            };
-
-            return Ok(regionDto);
+            return Ok(mapper.Map<RegionDto>(regionDomainModel));
         }
 
         //Delete Region
@@ -169,16 +123,7 @@ namespace HEWalks.API.Controllers
             }
 
             //return deleted Region back
-            //map Domain Model to DTO
-            var regionDto = new RegionDto
-            {
-                Id = regionDomainModel.Id,
-                Code = regionDomainModel.Code,
-                Name = regionDomainModel.Name,
-                RegionImageUrl = regionDomainModel.RegionImageUrl
-            };
-
-            return Ok(regionDto);
+            return Ok(mapper.Map<RegionDto>(regionDomainModel));
 
         }
 

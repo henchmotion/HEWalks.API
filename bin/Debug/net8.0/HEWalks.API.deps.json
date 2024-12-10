@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v8.0": {
       "HEWalks.API/1.0.0": {
         "dependencies": {
+          "AutoMapper": "13.0.1",
+          "AutoMapper.Collection.LinqToSQL": "7.0.1",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.0",
@@ -15,6 +17,51 @@
         },
         "runtime": {
           "HEWalks.API.dll": {}
+        }
+      },
+      "AutoMapper/13.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "9.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.0"
+          }
+        }
+      },
+      "AutoMapper.Collection/7.0.1": {
+        "dependencies": {
+          "AutoMapper": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Collection.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.1.0"
+          }
+        }
+      },
+      "AutoMapper.Collection.LinqToSQL/7.0.1": {
+        "dependencies": {
+          "AutoMapper.Collection": "7.0.1",
+          "AutoMapper.Extensions.ExpressionMapping": "1.0.0"
+        },
+        "runtime": {
+          "lib/net461/AutoMapper.Collection.LinqToSQL.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.1.0"
+          }
+        }
+      },
+      "AutoMapper.Extensions.ExpressionMapping/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.ExpressionMapping.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Azure.Core/1.38.0": {
@@ -1093,6 +1140,34 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "path": "automapper/13.0.1",
+      "hashPath": "automapper.13.0.1.nupkg.sha512"
+    },
+    "AutoMapper.Collection/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pcdIsq7qj/bpcttVLIvbiDN3HHRGcPyW3BdzVuLS120tq/VNZxWg7PxMuTNTviC8iK8bptwuNHTKhCfYSP4dpQ==",
+      "path": "automapper.collection/7.0.1",
+      "hashPath": "automapper.collection.7.0.1.nupkg.sha512"
+    },
+    "AutoMapper.Collection.LinqToSQL/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b2fUSqu+UypFvYtv1DLEBJGruih8zq4oDo0khnWH8/07LYeA0yE7NHH8c6waGF+bxYchmTXKCcv4N3wg0qasBQ==",
+      "path": "automapper.collection.linqtosql/7.0.1",
+      "hashPath": "automapper.collection.linqtosql.7.0.1.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.ExpressionMapping/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Aq9jShjHUNT6xjQZ6jMIWLe0/FTOiANrxuhlqHmlwvClKRuuQ1x9zYRJ6edSNFwX8V2tTvrAvkE6lgn87O1wyQ==",
+      "path": "automapper.extensions.expressionmapping/1.0.0",
+      "hashPath": "automapper.extensions.expressionmapping.1.0.0.nupkg.sha512"
     },
     "Azure.Core/1.38.0": {
       "type": "package",

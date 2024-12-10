@@ -169,3 +169,7 @@ C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\runtimes\win\l
 C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\obj\Debug\net8.0\HEWalks.API.RazorAssemblyInfo.cache
 C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\obj\Debug\net8.0\HEWalks.API.RazorAssemblyInfo.cs
 C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\obj\Debug\net8.0\HEWalks.API.sourcelink.json
+C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\AutoMapper.Collection.dll
+C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\AutoMapper.Collection.LinqToSQL.dll
+C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\AutoMapper.Extensions.ExpressionMapping.dll

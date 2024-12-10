@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using HEWalks.API.Data;
 using Microsoft.Extensions.Options;
 using HEWalks.API.Repositories;
+using HEWalks.API.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("HEWalksConnectio
 //Injecting the repository
 builder.Services.AddScoped<IRegionRepository, SQLRegionRepository>();
 
+// Injecting AutoMapper
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 var app = builder.Build();
 
