@@ -4,6 +4,7 @@ using HEWalks.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HEWalks.API.Migrations
 {
     [DbContext(typeof(HEWalksDbContext))]
-    partial class HEWalksDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241219095537_Seeding data for Difficulties and Regions")]
+    partial class SeedingdataforDifficultiesandRegions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

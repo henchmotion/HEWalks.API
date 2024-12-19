@@ -44,6 +44,40 @@ namespace HEWalks.API.Data
                 }
             }; 
 
+            // To seed difficulties to the database
+            modelBuilder.Entity<Difficulty>().HasData(difficulties);
+
+            // Seed data for Regios
+            var regions = new List<Region>()
+            {
+                new Region()
+                {
+                    Id =  Guid.Parse("49cd0653-4674-4cf5-af26-a578a8137edd"),
+
+					Code = "AKL" ,
+                    Name =  "Auckland",
+                    RegionImageUrl = "img-aucland.url"
+                },
+
+				new Region()
+				{
+					Id = Guid.Parse("868b8f33-8fff-4a39-8cfd-685299f3b672") ,
+					Code = "NGN",
+					Name ="Nigeria" ,
+					RegionImageUrl = "img-nigeria.url"
+				},
+
+				new Region()
+				{
+					Id = Guid.Parse ("edaa6e88-42b2-4a1e-a5ee-958072ff9480"),
+					Code = "STL",
+					Name = "Scotland",
+					RegionImageUrl = "img-stland.url"
+				}
+
+			};
+
+            modelBuilder.Entity<Region>().HasData(regions); 
 
 		}
 	}

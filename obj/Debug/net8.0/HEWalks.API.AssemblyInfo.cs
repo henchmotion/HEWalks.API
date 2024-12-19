@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HEWalks.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37dcb83a86f3b23414d00b359a5b455ce4923b36")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8176aada1e1da222fb152ddd306b51c49ab17c48")]
 [assembly: System.Reflection.AssemblyProductAttribute("HEWalks.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HEWalks.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
