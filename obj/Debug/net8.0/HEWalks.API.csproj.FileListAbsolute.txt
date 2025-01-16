@@ -173,3 +173,6 @@ C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\AutoMapper.Collection.dll
 C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\AutoMapper.Collection.LinqToSQL.dll
 C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\AutoMapper.Extensions.ExpressionMapping.dll
+C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\NSwag.Annotations.dll
+C:\Users\Tenece\source\repos\HEWalks\HEWalks.API\bin\Debug\net8.0\Prometheus.NetStandard.dll

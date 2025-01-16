@@ -68,9 +68,21 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "NSwag.Annotations": {
+              "target": "Package",
+              "version": "[14.2.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "prometheus-net": {
+              "target": "Package",
+              "version": "[8.2.1, )"
             }
           },
           "imports": [
