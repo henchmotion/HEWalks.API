@@ -95,6 +95,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "HEWalks.API.Controllers.WalksController",
+    "Method": "GetAll",
+    "RelativePath": "api/Walks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "HEWalks.API.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

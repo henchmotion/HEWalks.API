@@ -1,5 +1,7 @@
 ﻿using HEWalks.API.Data;
 using HEWalks.API.Models.Domain;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata.Ecma335;
 
 namespace HEWalks.API.Repositories
 {
@@ -20,7 +22,7 @@ namespace HEWalks.API.Repositories
 
 		public async Task<List<Walk>> GetAllAsync()
 		{
-			return await dbContext.Walks.ToListAsync();
+			return await dbContext.Walks.ToListAsync();		
 		}
 	}
 }

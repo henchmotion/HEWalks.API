@@ -50,7 +50,7 @@ namespace HEWalks.API.Controllers
 			//Map Domain Model to DTO
 			return Ok(mapper.Map<List<WalkDto>>(walkDomainModel));
 		}
-
+		 
 	}
 
 }
