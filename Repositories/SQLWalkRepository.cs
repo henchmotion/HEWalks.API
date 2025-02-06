@@ -17,5 +17,10 @@ namespace HEWalks.API.Repositories
 			await dbContext.SaveChangesAsync();
 			return walk;
 		}
+
+		public async Task<List<Walk>> GetAllAsync()
+		{
+			return await dbContext.Walks.ToListAsync();
+		}
 	}
 }

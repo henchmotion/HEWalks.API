@@ -5,5 +5,6 @@ namespace HEWalks.API.Repositories
 	public interface IWalkRepository
 	{
 		Task<Walk> CreateAsync(Walk walk);
+		Task<Walk> GetAllAsync();
 	}
 }
