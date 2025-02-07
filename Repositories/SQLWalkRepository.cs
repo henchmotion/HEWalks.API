@@ -22,7 +22,17 @@ namespace HEWalks.API.Repositories
 
 		public async Task<List<Walk>> GetAllAsync()
 		{
-			return await dbContext.Walks.Include(x => x.Difficulty).Include(x => x.Region).ToListAsync();		
+			return await dbContext.Walks
+				.Include(x => x.Difficulty)
+				.Include(x => x.Region).ToListAsync();		
+		}
+
+		public async Task<Walk?> GetByIdAsync(Guid id)
+		{
+			return await dbContext.Walks
+				.Include(x => x.Difficulty)
+				.Include(x => x.Region)
+				.FirstOrDefaultAsync(x => x.Id == id);
 		}
 	}
 }

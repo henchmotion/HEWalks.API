@@ -51,6 +51,24 @@ namespace HEWalks.API.Controllers
 			//Map Domain Model to DTO
 			return Ok(mapper.Map<List<WalkDto>>(walkDomainModel));
 		}
+
+		// Get walk By Id
+		//GET: .api/Walks/{id}
+		[HttpGet]
+		[Route("{id:Guid}")]
+
+		public async Task<IActionResult> GetById([FromRoute] Guid id)
+		{
+			var walkDomainModel = await walkRepository.GetByIdAsync(id);
+
+			if (walkDomainModel == null)
+			{
+				return NotFound();
+			}
+
+			// Map Domain Model to DTO
+			return Ok(mapper.Map<WalkDto>(walkDomainModel));
+		}
 		 
 	}
 
