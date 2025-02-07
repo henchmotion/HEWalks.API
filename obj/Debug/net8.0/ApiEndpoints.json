@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "addRegionRequestDto",
-        "Type": "HEWalks.API.Models.DTO.AddRegionRequestDto",
+        "Type": "HEWalks.API.Models.DTO.Resquest.AddRegionRequestDto",
         "IsRequired": true
       }
     ],
@@ -56,7 +56,7 @@
       },
       {
         "Name": "updateRegionRequestDto",
-        "Type": "HEWalks.API.Models.DTO.UpdateRegionRequestDto",
+        "Type": "HEWalks.API.Models.DTO.Resquest.UpdateRegionRequestDto",
         "IsRequired": true
       }
     ],
@@ -88,7 +88,7 @@
     "Parameters": [
       {
         "Name": "addWalksRequestDto",
-        "Type": "HEWalks.API.Models.DTO.AddWalksRequestDto",
+        "Type": "HEWalks.API.Models.DTO.Resquest.AddWalksRequestDto",
         "IsRequired": true
       }
     ],

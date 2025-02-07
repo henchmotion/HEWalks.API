@@ -22,7 +22,7 @@ namespace HEWalks.API.Repositories
 
 		public async Task<List<Walk>> GetAllAsync()
 		{
-			return await dbContext.Walks.ToListAsync();		
+			return await dbContext.Walks.Include(x => x.Difficulty).Include(x => x.Region).ToListAsync();		
 		}
 	}
 }

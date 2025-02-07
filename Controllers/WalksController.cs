@@ -2,6 +2,7 @@
 using AutoMapper;
 using HEWalks.API.Models.Domain;
 using HEWalks.API.Models.DTO;
+using HEWalks.API.Models.DTO.Resquest;
 using HEWalks.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
@@ -10,7 +11,7 @@ using Prometheus;
 
 namespace HEWalks.API.Controllers
 {
-	[Route("api/[controller]")]
+    [Route("api/[controller]")]
 	[ApiController]
 	[SwaggerTag("Walks Operations")]
 

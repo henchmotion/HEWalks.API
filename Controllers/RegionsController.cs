@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using HEWalks.API.Models.Domain;
 using HEWalks.API.Data;
 using Microsoft.EntityFrameworkCore;
-using HEWalks.API.Models.DTO;
 using HEWalks.API.Repositories;
 using AutoMapper;
+using HEWalks.API.Models.DTO.Resquest;
 
 namespace HEWalks.API.Controllers
 {

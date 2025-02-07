@@ -1,4 +1,4 @@
-﻿namespace HEWalks.API.Models.DTO
+﻿namespace HEWalks.API.Models.DTO.Resquest
 {
     public class AddRegionRequestDto
     {
